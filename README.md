@@ -37,3 +37,46 @@ La necesidad de crear este script surge al realizar copias de seguridad con `dej
 ## Contribuciones
 
 Si encuentras algún problema o tienes sugerencias para mejorar el script, no dudes en abrir un problema o enviar una solicitud de extracción.
+
+
+
+
+# Script: `grupos.py`
+
+## Description
+
+This simple script is designed to facilitate the task of adding groups of files and directories to a user on a Linux system. Its main utility is for those who need to back up data mapped by Docker containers, where file groups can vary.
+
+## Motivation
+
+The need to create this script arises when performing backups with `deja-dup` of data that is mapped with Docker containers. Sometimes, we don't know the group that the Docker container creates, and if we don't belong to that group, the backup may fail. This script solves that problem by providing an easy way to identify and add groups recursively.
+
+## Usage
+
+### Requirements
+
+- Python 3
+- `sudo` permissions to add groups to the user
+
+### Example Usage
+
+1. Clone the repository or copy the contents of the script to a local file named `grupos.py`.
+2. Open a terminal and navigate to the directory where the script is located.
+3. Execute the script by providing the directory path to analyze:
+
+    ```bash
+    ./grupos.py /path/to/directory
+    ```
+
+4. The script will display users with read or execute permissions in the specified directory and will ask if you want to add those groups to your current user.
+
+5. Answer the confirmation prompts to add the desired groups to your user.
+
+## Notes
+
+- Make sure to have `sudo` permissions to execute the script and add groups to the user.
+- The script will ask for confirmation to add each found group, avoiding adding groups you already belong to.
+
+## Contributions
+
+If you find any issues or have suggestions to improve the script, feel free to open an issue or submit a pull request.
